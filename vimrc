@@ -56,6 +56,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'kentakins/hula'
 
 "" Custom bundles
+NeoBundle 'eshion/vim-sync'
 
 "" Python Bundle
 NeoBundle "davidhalter/jedi-vim"
@@ -88,6 +89,8 @@ call neobundle#end()
 
 " Required:
 filetype plugin indent on
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
@@ -109,6 +112,11 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
+
+" nowrap
+set nowrap
+"noremap : ;
+"noremap ; :
 
 "" Map leader to ,
 let mapleader=','
@@ -244,7 +252,7 @@ nnoremap <silent> <leader>sh :VimShellCreate<CR>
 "*****************************************************************************
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
-    set wrap
+    set nowrap
     set wm=2
     set textwidth=79
   endfunction
@@ -263,6 +271,7 @@ endif
 "*****************************************************************************
 "" The PC is fast enough, do syntax highlight syncing from start
 autocmd BufEnter * :syntax sync fromstart
+let loaded_matchparen = 1
 
 "" Remember cursor position
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -317,7 +326,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 0
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-noremap <leader>b :CtrlPBuffer<CR>
+noremap <leader>b :CtrlP<CR>
 let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
 
@@ -372,7 +381,7 @@ vmap > >gv
 
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
-"" Custom configs
+"" Custom config
 
 " vim-python
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
