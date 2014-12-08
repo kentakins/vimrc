@@ -79,11 +79,8 @@ NeoBundle 'tpope/vim-haml'
 "" Javascript Bundle
 NeoBundle "scrooloose/syntastic"
 
-
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'c9s/perlomni.vim'
-
-
 
 call neobundle#end()
 
@@ -107,6 +104,22 @@ set fileencodings=utf-8
 "" Fix backspace indent
 set backspace=indent,eol,start
 
+" persistent undo
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undodir')
+    " No console pops up
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer
+
 "" Tabs. May be overriten by autocmd rules
 set tabstop=4
 set softtabstop=0
@@ -115,8 +128,6 @@ set expandtab
 
 " nowrap
 set nowrap
-"noremap : ;
-"noremap ; :
 
 "" Map leader to ,
 let mapleader=','
