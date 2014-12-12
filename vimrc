@@ -53,7 +53,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 
 "" Color
-NeoBundle 'kentakins/hula'
+NeoBundle 'kentakins/hula.vim'
 
 "" Custom bundles
 NeoBundle 'eshion/vim-sync'
