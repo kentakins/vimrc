@@ -377,7 +377,6 @@ noremap <leader>z :bp<CR>
 "noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
-noremap ` :bn<CR>
 
 "" Close buffer
 noremap <leader>q :bp<cr>:bd #<cr>
