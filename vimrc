@@ -117,7 +117,7 @@ if has('persistent_undo')
     set undofile
 endif
 set undolevels=1000 "maximum number of changes that can be undone
-set undoreload=10000 "maximum number lines to save for undo on a buffer
+"set undoreload=10000 "maximum number lines to save for undo on a buffer
 
 "" Tabs. May be overriten by autocmd rules
 set tabstop=4
