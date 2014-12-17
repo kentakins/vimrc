@@ -46,7 +46,6 @@ NeoBundle 'Shougo/vimproc.vim', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
-NeoBundle 'Shougo/vimshell.vim'
 
 "" Snippets
 NeoBundle 'SirVer/ultisnips'
@@ -260,11 +259,6 @@ noremap <F3> :NERDTreeToggle<CR>
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
 let Grep_Default_Options = '-IR'
-
-" vimshell
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-let g:vimshell_prompt =  '$ '
-nnoremap <silent> <leader>sh :VimShellCreate<CR>
 
 "*****************************************************************************
 "" Functions
