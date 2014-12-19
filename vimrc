@@ -101,6 +101,7 @@ set fileencodings=utf-8
 
 "" Fix backspace indent
 set backspace=indent,eol,start
+let g:indentLine_color_term = 234
 
 " persistent undo
 " Put plugins and dictionaries in this dir (also on Windows)
