@@ -52,7 +52,6 @@ NeoBundle 'jszakmeister/vim-togglecursor'
 
 "" Python Bundle
 NeoBundle "davidhalter/jedi-vim"
-NeoBundle "scrooloose/syntastic"
 NeoBundle "majutsushi/tagbar"
 NeoBundle "Yggdroot/indentLine"
 
@@ -74,6 +73,7 @@ NeoBundle "scrooloose/syntastic"
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'c9s/perlomni.vim'
 
+"" Tab Complete
 NeoBundle 'ervandew/supertab'
 
 call neobundle#end()
@@ -424,3 +424,5 @@ let g:javascript_enable_domhtmlcss = 1
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+match ErrorMsg `\%>80v.\+`
