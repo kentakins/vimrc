@@ -178,7 +178,7 @@ else
   let g:CSApprox_loaded = 1
 
   if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
+    set term=xterm-256color
   else
     if $TERM == 'xterm'
       set term=xterm-256color
