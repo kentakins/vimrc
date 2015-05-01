@@ -74,6 +74,8 @@ NeoBundle "scrooloose/syntastic"
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'c9s/perlomni.vim'
 
+NeoBundle 'ervandew/supertab'
+
 call neobundle#end()
 
 " Required:
