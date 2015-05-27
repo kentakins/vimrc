@@ -157,7 +157,9 @@ set shell=/bin/sh
 syntax on
 set ruler
 set number
-set colorcolumn=80
+if (exists('+colorcolumn'))
+	set colorcolumn=80
+endif
 
 let no_buffers_menu=1
 highlight BadWhitespace ctermbg=red guibg=red
@@ -424,5 +426,3 @@ let g:javascript_enable_domhtmlcss = 1
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
-match ErrorMsg `\%>80v.\+`
