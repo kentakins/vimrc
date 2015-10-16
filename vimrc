@@ -37,7 +37,6 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'amirh/HTML-AutoCloseTag'
-NeoBundle 'gorodinkiy/vim-coloresque'
 
 call neobundle#end()
 
