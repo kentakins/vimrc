@@ -29,52 +29,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "*****************************************************************************
 "" NeoBundle install packages
 "*****************************************************************************
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'vim-scripts/grep.vim'
-NeoBundle 'vim-scripts/CSApprox'
-
-"" Snippets
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-
-"" Color
 NeoBundle 'kentakins/hula.vim'
 
-"" Custom bundles
-NeoBundle 'jszakmeister/vim-togglecursor'
-
-"" Python Bundle
-NeoBundle "davidhalter/jedi-vim"
-NeoBundle "majutsushi/tagbar"
-NeoBundle "Yggdroot/indentLine"
-
-
-"" PHP Bundle
-NeoBundle 'arnaud-lb/vim-php-namespace'
-
-
-"" HTML Bundle
-NeoBundle 'amirh/HTML-AutoCloseTag'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'gorodinskiy/vim-coloresque'
-NeoBundle 'tpope/vim-haml'
-
-
-"" Javascript Bundle
-NeoBundle "scrooloose/syntastic"
-
-NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'c9s/perlomni.vim'
-
-"" Tab Complete
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'ervandew/supertab'
+NeoBundle 'amirh/HTML-AutoCloseTag'
+NeoBundle 'gorodinkiy/vim-coloresque'
 
 call neobundle#end()
 
@@ -172,13 +135,6 @@ set guioptions=egmrti
 set gfn=Monospace\ 8
 
 if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
-
   if $COLORTERM == 'gnome-terminal'
     set term=xterm-256color
   else
@@ -237,25 +193,6 @@ cnoreabbrev Q q
 
 set fillchars-=vert:\|
 
-"" NERDTree configuration
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__','\.DS_Store$']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeShowHidden=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 42
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
-
-"let NERDTreeMapOpenInTab='<ENTER>'
-
-" grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
-
 "*****************************************************************************
 "" Functions
 "*****************************************************************************
@@ -305,20 +242,6 @@ set autoread
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
-"" Git
-noremap <Leader>ga :!git add .<CR>
-noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
-noremap <Leader>gsh :!git push<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
-
-"" Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
-
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
@@ -339,21 +262,6 @@ noremap <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_show_hidden = 1 
-
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
-
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
 
 "" Remove trailing whitespace on <leader>S
 nnoremap <silent> <leader>S :call TrimWhiteSpace()<cr>:let @/=''<CR>
@@ -388,28 +296,6 @@ vmap > >gv
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 "" Custom config
-
-" vim-python
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-    \ formatoptions+=croq softtabstop=4 smartindent
-    \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-
-" jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
-
-" syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
-
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
 
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
