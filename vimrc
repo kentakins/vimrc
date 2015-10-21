@@ -37,7 +37,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'amirh/HTML-AutoCloseTag'
-NeoBundle 'chrisbra/Colorizer'
+NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'pangloss/vim-javascript'
 
 call neobundle#end()
@@ -129,9 +129,6 @@ let no_buffers_menu=1
 highlight BadWhitespace ctermbg=red guibg=red
 colorscheme hula
 
-set regexpengine=1
-syntax enable
-
 set mousemodel=popup
 set t_Co=256
 set nocursorline
@@ -220,7 +217,7 @@ endif
 "" Autocmd Rules
 "*****************************************************************************
 "" The PC is fast enough, do syntax highlight syncing from start
-" autocmd BufEnter * :syntax sync fromstart
+autocmd BufEnter * :syntax sync fromstart
 let loaded_matchparen = 1
 
 "" Remember cursor position
