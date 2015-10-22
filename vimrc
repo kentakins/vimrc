@@ -31,6 +31,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "*****************************************************************************
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kentakins/hula.vim'
 
 NeoBundle 'airblade/vim-gitgutter'
