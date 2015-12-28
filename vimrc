@@ -11,7 +11,6 @@ endif
 
 let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
 
-
 if !filereadable(neobundle_readme)
   echo "Installing NeoBundle..."
   echo ""
@@ -40,6 +39,9 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'amirh/HTML-AutoCloseTag'
 NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'kien/ctrlp.vim.git'
 
 call neobundle#end()
 
@@ -264,6 +266,7 @@ noremap <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_show_hidden = 1 
+noremap <Leader>f :CtrlP<CR>
 
 "" Remove trailing whitespace on <leader>S
 nnoremap <silent> <leader>S :call TrimWhiteSpace()<cr>:let @/=''<CR>
@@ -308,7 +311,7 @@ vnoremap <silent> <C-Q>         <C-C>:q!<CR>
 inoremap <silent> <C-Q>         <C-O>:q!<CR>
 
 let g:javascript_enable_domhtmlcss = 1
-
+map <C-n> :NERDTreeToggle<CR>
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
