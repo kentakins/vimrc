@@ -89,14 +89,13 @@ set expandtab
 
 set spelllang=en               " Set default language to English 
 
-" wrap
-set wrap
-set linebreak
-set nolist
-set showbreak=↳\ 
-
 "" Map leader to ,
 let mapleader=','
+
+" wrap
+set wrap
+set nolist
+set showbreak=↳\ 
 
 "" Enable hidden buffers
 set hidden
