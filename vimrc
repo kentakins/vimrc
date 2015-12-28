@@ -41,7 +41,7 @@ NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'ctrlpvim/ctrlp.vim.git'
 
 call neobundle#end()
 
@@ -82,15 +82,18 @@ set undolevels=1000 "maximum number of changes that can be undone
 "set undoreload=10000 "maximum number lines to save for undo on a buffer
 
 "" Tabs. May be overriten by autocmd rules
-set tabstop=4
+set tabstop=2
 set softtabstop=0
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 
 set spelllang=en               " Set default language to English 
 
-" nowrap
-set nowrap
+" wrap
+set wrap
+set linebreak
+set nolist
+set showbreak=↳\ 
 
 "" Map leader to ,
 let mapleader=','
@@ -200,14 +203,6 @@ set fillchars-=vert:\|
 "*****************************************************************************
 "" Functions
 "*****************************************************************************
-if !exists('*s:setupWrapping')
-  function s:setupWrapping()
-    set nowrap
-    set wm=2
-    set textwidth=79
-  endfunction
-endif
-
 if !exists('*TrimWhiteSpace')
   function TrimWhiteSpace()
     let @*=line(".")
@@ -220,14 +215,10 @@ endif
 "" Autocmd Rules
 "*****************************************************************************
 "" The PC is fast enough, do syntax highlight syncing from start
-autocmd BufEnter * :syntax sync fromstart
-let loaded_matchparen = 1
+" autocmd BufEnter * :syntax sync fromstart
 
 "" Remember cursor position
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-"" txt
-autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
 
 "" make/cmake
 autocmd FileType make setlocal noexpandtab
