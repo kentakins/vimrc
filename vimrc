@@ -42,6 +42,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'ctrlpvim/ctrlp.vim.git'
+NeoBundle 'Townk/vim-autoclose.git'
 
 call neobundle#end()
 
