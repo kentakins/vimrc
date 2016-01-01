@@ -36,13 +36,14 @@ NeoBundle 'kentakins/hula.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'ervandew/supertab'
-NeoBundle 'amirh/HTML-AutoCloseTag'
 NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'ctrlpvim/ctrlp.vim.git'
-NeoBundle 'Townk/vim-autoclose.git'
+NeoBundle 'jiangmiao/auto-pairs.git'
+NeoBundle 'mxw/vim-jsx.git'
+NeoBundle 'alvan/vim-closetag.git'
 
 call neobundle#end()
 
@@ -66,6 +67,12 @@ set fileencodings=utf-8
 "" Fix backspace indent
 set backspace=indent,eol,start
 let g:indentLine_color_term = 234
+
+"" Allow JSX syntax in .js files for mxw/vim-jsx.git plugin
+let g:jsx_ext_required = 0
+
+"" filenames like *.xml, *.html, *.xhtml, ...
+let g:closetag_filenames = "*.html,*.xml,*.js,*.jsx"
 
 " persistent undo
 " Put plugins and dictionaries in this dir (also on Windows)
