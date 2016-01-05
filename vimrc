@@ -310,6 +310,7 @@ inoremap <silent> <C-Q>         <C-O>:q!<CR>
 
 let g:javascript_enable_domhtmlcss = 1
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
