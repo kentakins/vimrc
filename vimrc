@@ -106,7 +106,7 @@ set nolist
 set showbreak=↳\ 
 
 "" whitespace visible
-set listchars=space:∙,eol:↵,tab:⎯⎯
+set listchars=space:∙,eol:↵,tab:--
 set list
 
 "" Enable hidden buffers
