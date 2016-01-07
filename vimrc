@@ -105,6 +105,10 @@ set wrap
 set nolist
 set showbreak=↳\ 
 
+"" whitespace visible
+set listchars=space:∙,eol:↵,tab:⎯⎯
+set list
+
 "" Enable hidden buffers
 set hidden
 
@@ -298,6 +302,7 @@ vmap > >gv
 
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
+
 "" Custom config
 
 noremap <silent> <C-S>          :update<CR>
