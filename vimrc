@@ -314,8 +314,11 @@ vnoremap <silent> <C-Q>         <C-C>:q!<CR>
 inoremap <silent> <C-Q>         <C-O>:q!<CR>
 
 let g:javascript_enable_domhtmlcss = 1
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>:set nolist<CR>
 let NERDTreeShowHidden=1
+
+"" shows file-tree for netrw when nerdtree not installed
+let g:netrw_liststyle=3
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
