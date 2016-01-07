@@ -107,7 +107,6 @@ set showbreak=↳\
 
 "" whitespace visible
 set listchars=space:∙,eol:↵,tab:--
-set list
 
 "" Enable hidden buffers
 set hidden
@@ -214,13 +213,30 @@ set fillchars-=vert:\|
 "*****************************************************************************
 "" Functions
 "*****************************************************************************
-if !exists('*TrimWhiteSpace')
-  function TrimWhiteSpace()
+if !exists('*TrimWhitespace')
+  function TrimWhitespace()
     let @*=line(".")
     %s/\s*$//e
     ''
   endfunction
 endif
+
+if !exists('*ShowWhitespace')
+  function ShowWhitespace()
+		hi NonText ctermfg=235 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
+		hi SpecialKey ctermfg=235 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
+    set list
+  endfunction
+endif
+
+if !exists('*HideWhitespace')
+  function HideWhiteSpace()
+		hi NonText ctermfg=233 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
+		hi SpecialKey ctermfg=233 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
+    set list
+  endfunction
+endif
+
 
 "*****************************************************************************
 "" Autocmd Rules
@@ -236,7 +252,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 
 if has("gui_running")
-  autocmd BufWritePre * :call TrimWhiteSpace()
+  autocmd BufWritePre * :call TrimWhitespace()
 endif
 
 set autoread
@@ -271,7 +287,7 @@ let g:ctrlp_show_hidden = 1
 noremap <Leader>f :CtrlP<CR>
 
 "" Remove trailing whitespace on <leader>S
-nnoremap <silent> <leader>S :call TrimWhiteSpace()<cr>:let @/=''<CR>
+nnoremap <silent> <leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
 
 "" Copy/Paste/Cut
 noremap YY "+y<CR>
