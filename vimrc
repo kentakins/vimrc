@@ -225,15 +225,17 @@ if !exists('*ShowWhitespace')
   function ShowWhitespace()
 		hi NonText ctermfg=235 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
 		hi SpecialKey ctermfg=235 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
+		hi ColorColumn ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#1c1c1c gui=NONE
     set list
   endfunction
 endif
 
 if !exists('*HideWhitespace')
-  function HideWhiteSpace()
+  function HideWhitespace()
 		hi NonText ctermfg=233 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
 		hi SpecialKey ctermfg=233 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
-    set list
+		hi ColorColumn ctermfg=NONE ctermbg=233 cterm=NONE guifg=NONE guibg=#1c1c1c gui=NONE
+    set nolist
   endfunction
 endif
 
@@ -304,7 +306,10 @@ endif
 noremap <leader>z :bp<CR>
 "noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
+noremap <leader>w :bn<CR>\
+
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
 
 "" Close buffer
 noremap <leader>q :bp<cr>:bd #<cr>
@@ -321,13 +326,13 @@ noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=lin
 
 "" Custom config
 
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
+noremap  <silent> <C-S>         :w<CR>
+vnoremap <silent> <C-S>         <C-C>:w<CR>
+inoremap <silent> <C-S>         <C-O>:w<CR>
 
-noremap <silent> <C-Q>          :q!<CR>
-vnoremap <silent> <C-Q>         <C-C>:q!<CR>
-inoremap <silent> <C-Q>         <C-O>:q!<CR>
+noremap  <silent> <C-Q>         :q<CR>
+vnoremap <silent> <C-Q>         <C-C>:q<CR>
+inoremap <silent> <C-Q>         <C-O>:q<CR>
 
 let g:javascript_enable_domhtmlcss = 1
 map <C-n> :NERDTreeToggle<CR>:set nolist<CR>
