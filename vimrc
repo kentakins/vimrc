@@ -45,6 +45,8 @@ NeoBundle 'jiangmiao/auto-pairs.git'
 NeoBundle 'mxw/vim-jsx.git'
 NeoBundle 'alvan/vim-closetag.git'
 
+
+
 call neobundle#end()
 
 " Required:
@@ -290,6 +292,9 @@ noremap <Leader>f :CtrlP<CR>
 
 "" Remove trailing whitespace on <leader>S
 nnoremap <silent> <leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
+
+"" Toggle AutoPairs on/of
+nnoremap <silent> <leader>[ :call AutoPairsToggle()<CR>
 
 "" Copy/Paste/Cut
 noremap YY "+y<CR>
