@@ -44,6 +44,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim.git'
 NeoBundle 'jiangmiao/auto-pairs.git'
 NeoBundle 'mxw/vim-jsx.git'
 NeoBundle 'alvan/vim-closetag.git'
+NeoBundle 'mhinz/vim-startify'
 
 
 
@@ -106,9 +107,6 @@ let mapleader=','
 set wrap
 set nolist
 set showbreak=↳\ 
-
-"" whitespace visible
-set listchars=space:∙,eol:↵,tab:--
 
 "" Enable hidden buffers
 set hidden
@@ -197,6 +195,35 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 
+
+let g:startify_custom_header = [
+	\ '',
+	\ '',
+	\ '',
+	\ '		 Custom Mappings',
+	\ '',
+	\ '		 <leader> 				,',
+	\ '		 <leader> -				Toggle Invisibles/Whitespace',
+	\ '		 <leader> \				Toggle 80 Color Column',
+	\ '		 <leader> h				Horizontal Split',
+	\ '		 <leader> v				Vertical Split',
+	\ '		 <leader> .				Set Working Directory',
+	\ '		 <leader> e				File Search',
+	\ '		 <leader> f				Fuzzy File Search',
+	\ '		 <leader> S				Trim Whitespace',
+	\ '		 <leader> [				Toggle AutoPairs',
+	\ '		 <leader> q				Close Buffer',
+	\ '		 <leader> space		No Highlight :noh',
+	\ '		 <leader> p				paste from clipboard',
+	\ '		 Ctrl + n					Open NerdTree',
+	\ '		 Tab							Next Buffer',
+	\ '		 Shft + Tab				Prev Buffer',
+	\ '',
+	\ '',
+	\ '',
+	\ ]
+
+
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
@@ -215,6 +242,8 @@ set fillchars-=vert:\|
 "*****************************************************************************
 "" Functions
 "*****************************************************************************
+
+
 if !exists('*TrimWhitespace')
   function TrimWhitespace()
     let @*=line(".")
@@ -223,23 +252,85 @@ if !exists('*TrimWhitespace')
   endfunction
 endif
 
-if !exists('*ShowWhitespace')
-  function ShowWhitespace()
-		hi NonText ctermfg=235 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
-		hi SpecialKey ctermfg=235 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
-		hi ColorColumn ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#1c1c1c gui=NONE
+
+
+
+
+""
+"" Toggle Invisible Whitespace
+""
+
+if !exists('*ShowInvisibles')
+  function ShowInvisibles()
+		"" whitespace chars
+		set listchars=space:∙,eol:¬,tab:--
     set list
+		hi NonText ctermfg=235
   endfunction
 endif
 
-if !exists('*HideWhitespace')
-  function HideWhitespace()
-		hi NonText ctermfg=233 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
-		hi SpecialKey ctermfg=233 ctermbg=233 cterm=NONE guifg=#262626 guibg=#121212 gui=NONE
-		hi ColorColumn ctermfg=NONE ctermbg=233 cterm=NONE guifg=NONE guibg=#1c1c1c gui=NONE
+if !exists('*HideInvisibles')
+  function HideInvisibles()
+		hi NonText ctermfg=233
     set nolist
   endfunction
 endif
+
+if !exists('*ToggleInvisibles')
+	let g:whitespace_visible = 0
+	function! ToggleInvisibles()
+			if g:whitespace_visible
+					let g:whitespace_visible = 0
+					:call HideInvisibles()
+			else
+					let g:whitespace_visible = 1
+					:call ShowInvisibles()
+			endif
+	endfunction
+endif
+
+"" Show invisible whitespace
+nnoremap <silent> <leader>- :call ToggleInvisibles()<CR>
+
+
+
+
+
+""
+"" Toggle ColorColumn
+""
+
+if !exists('*ShowColorColumn')
+  function ShowColorColumn()
+		hi ColorColumn ctermbg=234
+  endfunction
+endif
+
+if !exists('*HideColorColumn')
+  function HideColorColumn()
+		hi ColorColumn ctermbg=233
+  endfunction
+endif
+
+if !exists('*ToggleColorColumn')
+	let g:color_column_visible = 1
+	function! ToggleColorColumn()
+			if g:color_column_visible
+					let g:color_column_visible = 0
+					:call HideColorColumn()
+			else
+					let g:color_column_visible = 1
+					:call ShowColorColumn()
+			endif
+	endfunction
+endif
+
+"" Show invisible whitespace
+nnoremap <silent> <leader>\ :call ToggleColorColumn()<CR>
+
+
+
+
 
 
 "*****************************************************************************
@@ -256,7 +347,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 
 if has("gui_running")
-  autocmd BufWritePre * :call TrimWhitespace()
+autocmd BufWritePre * :call TrimWhitespace()
 endif
 
 set autoread
@@ -296,6 +387,11 @@ nnoremap <silent> <leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
 "" Toggle AutoPairs on/of
 nnoremap <silent> <leader>[ :call AutoPairsToggle()<CR>
 
+set nopaste
+
+"" Custom Paste Mode Mapping
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
+
 "" Copy/Paste/Cut
 noremap YY "+y<CR>
 noremap PP "+gP<CR>
@@ -330,10 +426,6 @@ vmap > >gv
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 
 "" Custom config
-
-noremap  <silent> <C-S>         :w<CR>
-vnoremap <silent> <C-S>         <C-C>:w<CR>
-inoremap <silent> <C-S>         <C-O>:w<CR>
 
 noremap  <silent> <C-Q>         :q<CR>
 vnoremap <silent> <C-Q>         <C-C>:q<CR>
