@@ -214,7 +214,7 @@ let g:startify_custom_header = [
 	\ '		 <leader> [				Toggle AutoPairs',
 	\ '		 <leader> q				Close Buffer',
 	\ '		 <leader> space		No Highlight :noh',
-	\ '		 <leader> p				paste from clipboard',
+	\ '		 <leader> p				toggle paste mode',
 	\ '		 Ctrl + n					Open NerdTree',
 	\ '		 Tab							Next Buffer',
 	\ '		 Shft + Tab				Prev Buffer',
@@ -331,6 +331,41 @@ nnoremap <silent> <leader>\ :call ToggleColorColumn()<CR>
 
 
 
+""
+"" Toggle Paste Mode
+""
+
+if !exists('*PasteOn')
+  function PasteOn()
+		set paste
+		:startinsert
+		echo "Ready to paste stuff"
+  endfunction
+endif
+
+if !exists('*PasteOff')
+  function PasteOff()
+		set nopaste
+		echo "Paste off"
+  endfunction
+endif
+
+if !exists('*TogglePasteMode')
+	let g:paste_mode = 0
+	function! TogglePasteMode()
+			if g:paste_mode
+					let g:paste_mode = 0
+					:call PasteOff()
+			else
+					let g:paste_mode = 1
+					:call PasteOn()
+			endif
+	endfunction
+endif
+
+"" Show invisible whitespace
+nnoremap <silent> <leader>p :call TogglePasteMode()<CR>
+
 
 
 "*****************************************************************************
@@ -388,9 +423,6 @@ nnoremap <silent> <leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
 nnoremap <silent> <leader>[ :call AutoPairsToggle()<CR>
 
 set nopaste
-
-"" Custom Paste Mode Mapping
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
 
 "" Copy/Paste/Cut
 noremap YY "+y<CR>
