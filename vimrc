@@ -45,6 +45,7 @@ NeoBundle 'jiangmiao/auto-pairs.git'
 NeoBundle 'mxw/vim-jsx.git'
 NeoBundle 'alvan/vim-closetag.git'
 NeoBundle 'mhinz/vim-startify'
+NeoBundle 'vim-scripts/grep.vim'
 
 
 
@@ -414,7 +415,12 @@ noremap <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_show_hidden = 1 
-noremap <Leader>f :CtrlP<CR>
+
+" grep.vim
+nnoremap <silent> <leader>f :Rgrep<CR>
+let Grep_Default_Options = '-IR'
+let Grep_Skip_Files = '*.log *.db'
+let Grep_Skip_Dirs = '.git node_modules'
 
 "" Remove trailing whitespace on <leader>S
 nnoremap <silent> <leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
