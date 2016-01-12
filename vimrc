@@ -198,6 +198,8 @@ let g:airline#extensions#tagbar#enabled = 1
 
 
 let g:startify_custom_header = [
+	\ '   Vim | version ' . version,
+	\ '',
 	\ '   Custom Mappings',
 	\ '',
 	\ '   , -           Toggle Invisibles/Whitespace',
