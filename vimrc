@@ -44,10 +44,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim.git'
 NeoBundle 'jiangmiao/auto-pairs.git'
 NeoBundle 'mxw/vim-jsx.git'
 NeoBundle 'alvan/vim-closetag.git'
-NeoBundle 'mhinz/vim-startify'
 NeoBundle 'vim-scripts/grep.vim'
-
-
 
 call neobundle#end()
 
@@ -197,31 +194,6 @@ let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 
 
-let g:startify_custom_header = [
-	\ '   Vim | version ' . version,
-	\ '',
-	\ '   Custom Mappings',
-	\ '',
-	\ '   , -           Toggle Invisibles/Whitespace',
-	\ '   , \           Toggle 80 Color Column',
-	\ '   , h           Horizontal Split',
-	\ '   , v           Vertical Split',
-	\ '   , .           Set Working Directory',
-	\ '   , e           File Search',
-	\ '   , f           Fuzzy File Search',
-	\ '   , S           Trim Whitespace',
-	\ '   , [           Toggle AutoPairs',
-	\ '   , q           Close Buffer',
-	\ '   , space       No Highlight :noh',
-	\ '   , p           Toggle Paste Mode',
-	\ '   ctrl + n      Open NerdTree',
-	\ '   tab           Next Buffer',
-	\ '   shft + tab    Prev Buffer',
-	\ '',
-	\ '',
-	\ ]
-
-
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
@@ -241,7 +213,6 @@ set fillchars-=vert:\|
 "" Functions
 "*****************************************************************************
 
-
 if !exists('*TrimWhitespace')
   function TrimWhitespace()
     let @*=line(".")
@@ -249,8 +220,6 @@ if !exists('*TrimWhitespace')
     ''
   endfunction
 endif
-
-
 
 
 
@@ -289,8 +258,6 @@ endif
 
 "" Show invisible whitespace
 nnoremap <silent> <leader>- :call ToggleInvisibles()<CR>
-
-
 
 
 
