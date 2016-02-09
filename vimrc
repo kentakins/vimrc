@@ -42,8 +42,6 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'ctrlpvim/ctrlp.vim.git'
-" NeoBundle 'jiangmiao/auto-pairs.git'
-NeoBundle 'mxw/vim-jsx.git'
 NeoBundle 'alvan/vim-closetag.git'
 NeoBundle 'vim-scripts/grep.vim'
 
@@ -69,9 +67,6 @@ set fileencodings=utf-8
 "" Fix backspace indent
 set backspace=indent,eol,start
 let g:indentLine_color_term = 234
-
-"" Allow JSX syntax in .js files for mxw/vim-jsx.git plugin
-let g:jsx_ext_required = 0
 
 "" filenames like *.xml, *.html, *.xhtml, ...
 let g:closetag_filenames = "*.html,*.xml,*.js,*.jsx"
@@ -435,7 +430,7 @@ vnoremap <silent> <C-Q>         <C-C>:q<CR>
 inoremap <silent> <C-Q>         <C-O>:q<CR>
 
 let g:javascript_enable_domhtmlcss = 1
-map <C-n> :NERDTreeToggle<CR>:set nolist<CR>
+map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 "" shows file-tree for netrw when nerdtree not installed
