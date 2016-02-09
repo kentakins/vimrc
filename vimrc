@@ -29,7 +29,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "" NeoBundle install packages
 "*****************************************************************************
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kentakins/hula.vim'
 
@@ -390,7 +391,7 @@ let Grep_Skip_Dirs = '.git node_modules'
 nnoremap <silent> <leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
 
 "" Toggle AutoPairs on/of
-nnoremap <silent> <leader>[ :call AutoPairsToggle()<CR>
+" nnoremap <silent> <leader>[ :call AutoPairsToggle()<CR>
 
 set nopaste
 
