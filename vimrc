@@ -329,6 +329,28 @@ nnoremap <silent> <leader>p :call TogglePasteMode()<CR>
 
 
 
+""
+"" Toggle Tab Complete
+""
+
+if !exists('*ToggleTabComplete')
+	let g:tab_complete = 1
+	function! ToggleTabComplete()
+			if g:tab_complete
+				let b:SuperTabDisabled=1
+				let g:tab_complete = 0
+				echo "SuperTab Disabled"
+			else
+				let b:SuperTabDisabled=0
+				let g:tab_complete = 1
+				echo "SuperTab Enabled"
+			endif
+	endfunction
+endif
+
+"" Show invisible whitespace
+nnoremap <silent> <leader>t :call ToggleTabComplete()<CR>
+
 "*****************************************************************************
 "" Autocmd Rules
 "*****************************************************************************
