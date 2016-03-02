@@ -98,7 +98,7 @@ set spelllang=en               " Set default language to English
 let mapleader=','
 
 " wrap
-set wrap
+set nowrap
 set nolist
 set showbreak=↳\ 
 
