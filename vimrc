@@ -355,7 +355,7 @@ nnoremap <silent> <leader>t :call ToggleTabComplete()<CR>
 "" Autocmd Rules
 "*****************************************************************************
 "" The PC is fast enough, do syntax highlight syncing from start
-" autocmd BufEnter * :syntax sync fromstart
+autocmd BufEnter * :syntax sync fromstart
 
 "" Remember cursor position
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
