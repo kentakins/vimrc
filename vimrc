@@ -97,9 +97,12 @@ set spelllang=en               " Set default language to English
 "" Map leader to ,
 let mapleader=','
 
+"" Indentline 
+set listchars=tab:\┆\ 
+set list
+
 " wrap
 set nowrap
-set nolist
 set showbreak=↳\ 
 
 "" Enable hidden buffers
