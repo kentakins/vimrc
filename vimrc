@@ -260,6 +260,48 @@ nnoremap <silent> <leader>- :call ToggleInvisibles()<CR>
 
 
 
+
+
+
+
+""
+"" Toggle Tab Vertial Lines
+""
+
+if !exists('*ShowTabs')
+  function ShowTabs()
+		"" whitespace chars
+		set listchars=tab:\┆\ 
+    set list
+		hi NonText ctermfg=235
+  endfunction
+endif
+
+if !exists('*HideTabs')
+  function HideTabs()
+		hi NonText ctermfg=233
+    set nolist
+  endfunction
+endif
+
+if !exists('*ToggleTabs')
+	let g:whitespace_visible = 0
+	function! ToggleTabs()
+			if g:whitespace_visible
+					let g:whitespace_visible = 0
+					:call HideTabs()
+			else
+					let g:whitespace_visible = 1
+					:call ShowTabs()
+			endif
+	endfunction
+endif
+
+"" Show tabs
+nnoremap <silent> <leader><Tab> :call ToggleTabs()<CR>
+
+
+
 ""
 "" Toggle ColorColumn
 ""
@@ -289,7 +331,7 @@ if !exists('*ToggleColorColumn')
 	endfunction
 endif
 
-"" Show invisible whitespace
+"" Show color column
 nnoremap <silent> <leader>\ :call ToggleColorColumn()<CR>
 
 
