@@ -229,7 +229,7 @@ endif
 if !exists('*ShowInvisibles')
   function ShowInvisibles()
 		"" whitespace chars
-		set listchars=space:∙,eol:¬,tab:--
+		set listchars=space:∙,eol:¬,tab:\┆\ 
     set list
 		hi NonText ctermfg=235
   endfunction
