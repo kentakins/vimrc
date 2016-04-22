@@ -98,7 +98,7 @@ set spelllang=en               " Set default language to English
 let mapleader=','
 
 "" Indentline 
-set listchars=tab:\┆\ 
+set listchars=tab:\|\ 
 set list
 
 " wrap
@@ -229,15 +229,15 @@ endif
 if !exists('*ShowInvisibles')
   function ShowInvisibles()
 		"" whitespace chars
-		set listchars=space:∙,eol:¬,tab:\┆\ 
+		hi NonText ctermfg=236
+		hi SpecialKey ctermfg=236
+		set listchars=space:∙,eol:¬,tab:\|\ 
     set list
-		hi NonText ctermfg=235
   endfunction
 endif
 
 if !exists('*HideInvisibles')
   function HideInvisibles()
-		hi NonText ctermfg=233
     set nolist
   endfunction
 endif
@@ -271,21 +271,20 @@ nnoremap <silent> <leader>- :call ToggleInvisibles()<CR>
 if !exists('*ShowTabs')
   function ShowTabs()
 		"" whitespace chars
-		set listchars=tab:\┆\ 
+		hi SpecialKey ctermfg=234
+		set listchars=tab:\|\ 
     set list
-		hi NonText ctermfg=235
   endfunction
 endif
 
 if !exists('*HideTabs')
   function HideTabs()
-		hi NonText ctermfg=233
     set nolist
   endfunction
 endif
 
 if !exists('*ToggleTabs')
-	let g:whitespace_visible = 0
+	let g:whitespace_visible = 1
 	function! ToggleTabs()
 			if g:whitespace_visible
 					let g:whitespace_visible = 0
@@ -308,13 +307,13 @@ nnoremap <silent> <leader><Tab> :call ToggleTabs()<CR>
 
 if !exists('*ShowColorColumn')
   function ShowColorColumn()
-		hi ColorColumn ctermbg=234
+		hi ColorColumn ctermbg=233
   endfunction
 endif
 
 if !exists('*HideColorColumn')
   function HideColorColumn()
-		hi ColorColumn ctermbg=233
+		hi ColorColumn ctermbg=NONE
   endfunction
 endif
 
