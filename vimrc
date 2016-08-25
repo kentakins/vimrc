@@ -42,7 +42,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'ctrlpvim/ctrlp.vim.git'
-NeoBundle 'alvan/vim-closetag.git'
+NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'vim-scripts/grep.vim'
 
 call neobundle#end()
@@ -473,8 +473,8 @@ noremap <leader>z :bp<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>\
 
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bp<CR>
+" nnoremap <Tab> :bn<CR>
+" nnoremap <S-Tab> :bp<CR>
 
 "" Close buffer
 noremap <leader>q :bp<cr>:bd #<cr>
@@ -501,6 +501,9 @@ let NERDTreeShowHidden=1
 
 "" shows file-tree for netrw when nerdtree not installed
 let g:netrw_liststyle=3
+
+"" start JSHint with asi true, which suppresses semicolon warnings
+noremap <leader>j :JSHint asi:true<CR>
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
