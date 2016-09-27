@@ -511,3 +511,4 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinSize = 45
