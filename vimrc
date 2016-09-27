@@ -41,7 +41,9 @@ NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'ctrlpvim/ctr
+NeoBundle 'ctrlpvim/ctrlp.vim.git'
+NeoBundle 'alvan/vim-closetag.git'
+NeoBundle 'vim-scripts/grep.vim'
 
 call neobundle#end()
 
@@ -506,4 +508,3 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 let g:NERDTreeWinPos = "right"
-
