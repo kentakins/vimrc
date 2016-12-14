@@ -1,3 +1,4 @@
+
 "*****************************************************************************
 "" NeoBundle core
 "*****************************************************************************
@@ -5,8 +6,8 @@
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
@@ -28,20 +29,20 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "*****************************************************************************
 "" NeoBundle install packages
 "*****************************************************************************
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'vim-airline/vim-airline'
+" NeoBundle 'vim-airline/vim-airline-themes'
+" NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kentakins/hula.vim'
+NeoBundle 'kentakins/hula-blue.vim'
 
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-commentary'
-NeoBundle 'ervandew/supertab'
+" NeoBundle 'ervandew/supertab'
 NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mattn/emmet-vim'
+" NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'ctrlpvim/ctrlp.vim.git'
+" NeoBundle 'ctrlpvim/ctrlp.vim.git'
 NeoBundle 'Shutnik/jshint2.vim'
 NeoBundle 'vim-scripts/grep.vim'
 
@@ -98,8 +99,8 @@ set spelllang=en               " Set default language to English
 let mapleader=','
 
 "" Indentline 
-set listchars=tab:\|\ 
-set list
+set listchars=tab:\·\ 
+set nolist
 
 " wrap
 set nowrap
@@ -140,7 +141,7 @@ endif
 
 let no_buffers_menu=1
 highlight BadWhitespace ctermbg=red guibg=red
-colorscheme hula
+colorscheme hula-blue
 
 set mousemodel=popup
 set t_Co=256
@@ -180,17 +181,17 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
+"set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
 
 " unicode symbols
-let g:airline_theme = 'powerlineish'
-let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = 'fancy'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
+" let g:airline_theme = 'powerlineish'
+" let g:airline_powerline_fonts = 1
+" let g:Powerline_symbols = 'fancy'
+" let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#syntastic#enabled = 1
+" let g:airline#extensions#virtualenv#enabled = 1
+" let g:airline#extensions#tagbar#enabled = 1
 
 
 "*****************************************************************************
@@ -229,9 +230,9 @@ endif
 if !exists('*ShowInvisibles')
   function ShowInvisibles()
 		"" whitespace chars
-		hi NonText ctermfg=236
-		hi SpecialKey ctermfg=236
-		set listchars=space:∙,eol:¬,tab:\|\ 
+		hi NonText ctermfg=238
+		hi SpecialKey ctermfg=238
+		set listchars=space:‧,eol:¬,tab:\·\ 
     set list
   endfunction
 endif
@@ -271,8 +272,8 @@ nnoremap <silent> <leader>- :call ToggleInvisibles()<CR>
 if !exists('*ShowTabs')
   function ShowTabs()
 		"" whitespace chars
-		hi SpecialKey ctermfg=234
-		set listchars=tab:\|\ 
+		" hi SpecialKey ctermfg=234
+		set listchars=tab:\·\ 
     set list
   endfunction
 endif
@@ -284,7 +285,7 @@ if !exists('*HideTabs')
 endif
 
 if !exists('*ToggleTabs')
-	let g:whitespace_visible = 1
+	let g:whitespace_visible = 0
 	function! ToggleTabs()
 			if g:whitespace_visible
 					let g:whitespace_visible = 0
@@ -307,7 +308,7 @@ nnoremap <silent> <leader><Tab> :call ToggleTabs()<CR>
 
 if !exists('*ShowColorColumn')
   function ShowColorColumn()
-		hi ColorColumn ctermbg=233
+		hi ColorColumn ctermbg=238
   endfunction
 endif
 
@@ -318,7 +319,7 @@ if !exists('*HideColorColumn')
 endif
 
 if !exists('*ToggleColorColumn')
-	let g:color_column_visible = 1
+	let g:color_column_visible = 0
 	function! ToggleColorColumn()
 			if g:color_column_visible
 					let g:color_column_visible = 0
