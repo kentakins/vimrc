@@ -25,8 +25,6 @@
 	set bomb
 	set ttyfast
 	set binary
-
-	" encoding
 	set spelllang=en
 	set encoding=utf-8
 	set fileencoding=utf-8
@@ -61,6 +59,7 @@
 	set t_Co=256
 	set term=xterm-256color
 	syntax on
+	autocmd BufEnter * :syntax sync fromstart
 
 	" tweak delek theme into hula-blue
 	colorscheme delek
