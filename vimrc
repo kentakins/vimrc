@@ -152,10 +152,11 @@
 " -----------------------------------------------------------------------------
 " credit: http://ivanbrennan.nyc/blog/2014/01/16/rigging-vims-netrw/
 
-	let g:netrw_liststyle = 3         " thin (change to 3 for tree)
+	let g:netrw_liststyle = 1         " thin (change to 3 for tree)
 	let g:netrw_banner = 0            " no banner
 	let g:netrw_altv = 1              " open files on right
 	let g:netrw_preview = 1           " open previews vertically
+	let g:netrw_retmap = 1						" define shortcut to return to netrw window
 
 	fun! VexOpen(dir)
 		let g:netrw_browse_split = 4    " open files in previous window
