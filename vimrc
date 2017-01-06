@@ -162,7 +162,7 @@
 		let g:netrw_browse_split = 4    " open files in previous window
 		let vex_width = 40
 
-		execute "Vexplore " . a:dir
+		execute "Vexplore"
 		let t:vex_buf_nr = bufnr("%")
 		wincmd H
 
