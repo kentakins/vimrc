@@ -238,3 +238,37 @@
 
 	nnoremap <silent> <leader>p :call TogglePasteMode()<CR>
 
+" toggle invisibles
+" -----------------------------------------------------------------------------
+
+	if !exists('*ShowInvisibles')
+		function ShowInvisibles()
+			"" whitespace chars
+			hi NonText ctermfg=238
+			hi SpecialKey ctermfg=238
+			set listchars=space:‧,eol:¬,tab:\·\ 
+			set list
+		endfunction
+	endif
+
+	if !exists('*HideInvisibles')
+		function HideInvisibles()
+			set nolist
+		endfunction
+	endif
+
+	if !exists('*ToggleInvisibles')
+		let g:whitespace_visible = 0
+		function! ToggleInvisibles()
+				if g:whitespace_visible
+						let g:whitespace_visible = 0
+						:call HideInvisibles()
+				else
+						let g:whitespace_visible = 1
+						:call ShowInvisibles()
+				endif
+		endfunction
+	endif
+
+	"" Show invisible whitespace
+	nnoremap <silent> <leader>- :call ToggleInvisibles()<CR>
