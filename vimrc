@@ -202,7 +202,7 @@
 		endif
 	endf
 
-	noremap <C-n> :call VexToggle(getcwd())<CR>
+	noremap <silent><leader>n :call VexToggle(getcwd())<CR>
 
 
 " toggle paste mode
