@@ -271,5 +271,16 @@
 		endfunction
 	endif
 
-	"" Show invisible whitespace
+	"" show invisible whitespace
 	nnoremap <silent> <leader>- :call ToggleInvisibles()<CR>
+
+	"" remove trailing whitespace on <leader>S
+	if !exists('*TrimWhitespace')
+		function TrimWhitespace()
+			let @*=line(".")
+			%s/\s*$//e
+			''
+		endfunction
+	endif
+
+	nnoremap <silent><leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
