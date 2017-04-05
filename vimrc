@@ -277,10 +277,8 @@
 	"" remove trailing whitespace on <leader>S
 	if !exists('*TrimWhitespace')
 		function TrimWhitespace()
-			let @*=line(".")
-			%s/\s*$//e
-			''
+			%s/\s\+$//e
 		endfunction
 	endif
 
-	nnoremap <silent><leader>S :call TrimWhitespace()<cr>:let @/=''<CR>
+	nnoremap <silent><leader>S :call TrimWhitespace()<CR>
