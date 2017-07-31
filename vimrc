@@ -338,3 +338,35 @@
 
 	nnoremap gc :call ToggleComment()<cr>
 	vnoremap gc :call ToggleComment()<cr>
+
+" remap tab to keyword completion
+" -----------------------------------------------------------------------------
+  function! TabComplete(direction)
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+      return "\<tab>"
+    elseif "backward" == a:direction
+      return "\<c-p>"
+    elseif "forward" == a:direction
+      return "\<c-n>"
+    else
+      return "\<c-x>\<c-k>"
+    endif
+  endfunction
+
+  inoremap <tab> <c-r>=TabComplete ("forward")<CR>
+
+
+" toggle tab completion
+" -----------------------------------------------------------------------------
+  function! ToggleTabCompletion()
+    if mapcheck("\<tab>", "i") != ""
+      :iunmap <tab>
+      echo "tab completion off"
+    else
+      :imap <tab> <c-n>
+      echo "tab completion on"
+    endif
+  endfunction
+
+  map <Leader>t :call ToggleTabCompletion()<CR>
