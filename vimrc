@@ -165,44 +165,23 @@
 
 	let g:netrw_liststyle = 1         " thin (change to 3 for tree)
 	let g:netrw_banner = 0            " no banner
-	let g:netrw_altv = 1              " open files on right
 	let g:netrw_preview = 1           " open previews vertically
 	let g:netrw_retmap = 1						" define shortcut to return to netrw window
 
 	fun! VexOpen(dir)
-		let g:netrw_browse_split = 4    " open files in previous window
-		let vex_width = 40
-
-		execute "Vexplore"
+		execute "Explore"
 		let t:vex_buf_nr = bufnr("%")
 		wincmd H
-
-		call VexSize(vex_width)
-	endf
-
-	fun! VexSize(vex_width)
-		execute "vertical resize" . a:vex_width
-		set winfixwidth
-		call NormalizeWidths()
-	endf
-
-	fun! NormalizeWidths()
-		let eadir_pref = &eadirection
-		set eadirection=hor
-		set equalalways! equalalways!
-		let &eadirection = eadir_pref
 	endf
 
 	fun! VexClose()
-		let cur_win_nr = winnr()
-		let target_nr = ( cur_win_nr == 1 ? winnr("#") : cur_win_nr )
+		execute "bd"
+		" let cur_win_nr = winnr()
+		" let target_nr = ( cur_win_nr == 1 ? winnr("#") : cur_win_nr )
 
-		1wincmd w
-		close
+		" 1wincmd w
+		" close
 		unlet t:vex_buf_nr
-
-		execute (target_nr - 1) . "wincmd w"
-		call NormalizeWidths()
 	endf
 
 	fun! VexToggle(dir)
