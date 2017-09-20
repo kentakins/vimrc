@@ -163,37 +163,16 @@
 " -----------------------------------------------------------------------------
 " credit: http://ivanbrennan.nyc/blog/2014/01/16/rigging-vims-netrw/
 
-	let g:netrw_liststyle = 1         " thin (change to 3 for tree)
+	let g:netrw_liststyle = 3         " thin (change to 3 for tree)
 	let g:netrw_banner = 0            " no banner
 	let g:netrw_preview = 1           " open previews vertically
 	let g:netrw_retmap = 1						" define shortcut to return to netrw window
 
 	fun! VexOpen(dir)
-		execute "Explore"
-		let t:vex_buf_nr = bufnr("%")
-		wincmd H
+		execute "Explore" . a:dir
 	endf
 
-	fun! VexClose()
-		execute "bd"
-		" let cur_win_nr = winnr()
-		" let target_nr = ( cur_win_nr == 1 ? winnr("#") : cur_win_nr )
-
-		" 1wincmd w
-		" close
-		unlet t:vex_buf_nr
-	endf
-
-	fun! VexToggle(dir)
-		if exists("t:vex_buf_nr")
-			call VexClose()
-		else
-			call VexOpen(a:dir)
-		endif
-	endf
-
-	noremap <C-N> :call VexToggle(getcwd())<CR>
-	noremap <silent><leader>e :call VexToggle(getcwd())<CR>
+	noremap <silent><leader>e :call VexOpen(getcwd())<CR>
 
 
 " toggle paste mode
