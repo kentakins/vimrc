@@ -159,16 +159,13 @@
 	set undolevels=1000 "maximum number of changes that can be undone
 
 
-" netrw toggle
+" netrw
 " -----------------------------------------------------------------------------
-" credit: http://ivanbrennan.nyc/blog/2014/01/16/rigging-vims-netrw/
 
-	let g:netrw_liststyle = 1         " thin (change to 3 for tree)
+	let g:netrw_liststyle = 1         " full date
 	let g:netrw_banner = 0            " no banner
-	let g:netrw_preview = 1           " open previews vertically
-	let g:netrw_retmap = 1						" define shortcut to return to netrw window
 
-	fun! VexOpen(dir)
+	fun! ExOpen(dir)
 		if exists("t:vex_buf_nr")
 			execute "Rex"
 		else
@@ -177,7 +174,7 @@
 		endif
 	endf
 
-	noremap <silent><leader>e :call VexOpen(getcwd())<CR>
+	noremap <silent><leader>e :call ExOpen(getcwd())<CR>
 
 
 " toggle paste mode
