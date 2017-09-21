@@ -169,7 +169,12 @@
 	let g:netrw_retmap = 1						" define shortcut to return to netrw window
 
 	fun! VexOpen(dir)
-		execute "Explore" . a:dir
+		if exists("t:vex_buf_nr")
+			execute "Rex"
+		else
+			execute "Explore" . a:dir
+			let t:vex_buf_nr = bufnr("%")
+		endif
 	endf
 
 	noremap <silent><leader>e :call VexOpen(getcwd())<CR>
