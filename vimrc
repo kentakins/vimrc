@@ -134,7 +134,7 @@
 	hi SpecialKey			ctermfg=238 	ctermbg=NONE  cterm=NONE			guifg=#444444 	guibg=NONE			gui=NONE
 	hi Statement			ctermfg=197 	ctermbg=NONE	cterm=NONE			guifg=#ff005f 	guibg=NONE			gui=NONE
 	hi StorageClass		ctermfg=081 	ctermbg=NONE	cterm=NONE			guifg=#5fd7ff 	guibg=NONE			gui=NONE
-	hi String					ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00df5f		guibg=NONE			gui=NONE
+	hi String					ctermfg=082		ctermbg=NONE	cterm=NONE			guifg=#5fff00		guibg=NONE			gui=NONE
 	hi Tag						ctermfg=197		ctermbg=NONE	cterm=NONE			guifg=#ff005f		guibg=NONE			gui=NONE
 	hi Title					ctermfg=255		ctermbg=NONE	cterm=BOLD			guifg=#ffffff		guibg=NONE			gui=BOLD
 	hi Todo						ctermfg=246		ctermbg=NONE	cterm=INVERSE		guifg=#949494		guibg=NONE			gui=INVERSE
@@ -149,12 +149,12 @@
 	set fillchars-=vert:\| 
 	
 	" custom javastript highlighting
-	hi jsFuncArgs 					ctermfg=228 	ctermbg=NONE	cterm=NONE			guifg=#ffff87 	guibg=NONE			gui=NONE
+	hi jsFuncArgs 					ctermfg=220 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
 	hi jsFuncCall 					ctermfg=081 	ctermbg=NONE	cterm=NONE			guifg=#5fd7ff 	guibg=NONE			gui=NONE
 	hi jsFuncArgExpression 	ctermfg=081 	ctermbg=NONE	cterm=NONE			guifg=#5fd7ff 	guibg=NONE			gui=NONE
-	hi jsVariableDef				ctermfg=221 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
+	hi jsVariableDef				ctermfg=220 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
 	hi jsStorageClass				ctermfg=081 	ctermbg=NONE	cterm=NONE			guifg=#5fd7ff 	guibg=NONE			gui=NONE
-	hi jsRepeat							ctermfg=221 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
+	hi jsRepeat							ctermfg=220 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
 	hi jsArrowFunction 			ctermfg=081 	ctermbg=NONE	cterm=NONE			guifg=#5fd7ff 	guibg=NONE			gui=NONE
 
 	hi jsObjectKey					ctermfg=250 	ctermbg=NONE	cterm=NONE			guifg=#00afff 	guibg=NONE			gui=NONE
