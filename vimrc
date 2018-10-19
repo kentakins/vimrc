@@ -115,9 +115,9 @@
 	hi Conditional		ctermfg=197		ctermbg=NONE	cterm=NONE			guifg=#ff005f		guibg=NONE			gui=NONE
 	hi Constant				ctermfg=NONE 	ctermbg=NONE	cterm=NONE			guifg=NONE 			guibg=NONE			gui=NONE
 	hi Define					ctermfg=197		ctermbg=NONE	cterm=NONE			guifg=#ff005f		guibg=NONE			gui=NONE
-	hi DiffAdd				ctermfg=255		ctermbg=041		cterm=BOLD			guifg=#ffffff		guibg=#afff00		gui=BOLD
+	hi DiffAdd				ctermfg=NONE	ctermbg=022		cterm=BOLD			guifg=#ffffff		guibg=#afff00		gui=BOLD
 	hi DiffDelete			ctermfg=197 	ctermbg=NONE	cterm=NONE			guifg=#ff005f 	guibg=NONE			gui=NONE
-	hi DiffChange			ctermfg=NONE 	ctermbg=NONE	cterm=NONE			guifg=NONE 			guibg=NONE			gui=NONE
+	hi DiffChange			ctermfg=NONE 	ctermbg=024 	cterm=NONE			guifg=NONE 			guibg=NONE			gui=NONE
 	hi DiffText				ctermfg=NONE	ctermbg=024		cterm=BOLD			guifg=NONE			guibg=#005f87		gui=BOLD
 	hi ErrorMsg				ctermfg=255		ctermbg=161		cterm=NONE			guifg=#ffffff		guibg=#d7005f		gui=NONE
 	hi WarningMsg			ctermfg=255		ctermbg=161		cterm=NONE			guifg=#ffffff		guibg=#d7005f		gui=NONE
