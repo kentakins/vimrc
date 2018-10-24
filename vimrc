@@ -202,17 +202,10 @@
 
 	let g:netrw_liststyle = 1         " full date
 	let g:netrw_banner = 0            " no banner
+	let g:netrw_dirhistmax = 0
+	let g:netrw_keepdir = 0
 
-	fun! ExOpen(dir)
-		if exists("t:vex_buf_nr")
-			execute "Rex"
-		else
-			execute "Explore" . a:dir
-			let t:vex_buf_nr = bufnr("%")
-		endif
-	endf
-
-	noremap <silent><leader>e :call ExOpen(getcwd())<CR>
+	noremap <silent><leader>e :e.<CR>
 
 
 " toggle paste mode
