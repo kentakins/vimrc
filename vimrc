@@ -35,6 +35,7 @@
 	set wildmode=longest,full
 	set wildmenu
 	
+	set shell=/bin/bash
 
 " custom mappings
 " -----------------------------------------------------------------------------
@@ -200,13 +201,35 @@
 " netrw
 " -----------------------------------------------------------------------------
 
-	let g:netrw_liststyle = 1         " full date
+	let g:netrw_liststyle = 4         " full date
 	let g:netrw_banner = 0            " no banner
 	let g:netrw_dirhistmax = 0
 	let g:netrw_keepdir = 0
+	let g:netrw_browse_split = 4
+	let g:netrw_winsize = 30
 
-	noremap <silent><leader>e :e.<CR>
+	" noremap <silent><leader>e :e.<CR>
 
+	let g:NetrwIsOpen=0
+
+	function! ToggleNetrw()
+			if g:NetrwIsOpen
+					let i = bufnr("$")
+					while (i >= 1)
+							if (getbufvar(i, "&filetype") == "netrw")
+									silent exe "bwipeout " . i 
+							endif
+							let i-=1
+					endwhile
+					let g:NetrwIsOpen=0
+			else
+					let g:NetrwIsOpen=1
+					silent Lexplore
+			endif
+	endfunction
+
+	" Add your own mapping. For example:
+	noremap <silent><leader>e :call ToggleNetrw()<CR>
 
 " toggle paste mode
 " -----------------------------------------------------------------------------
@@ -373,3 +396,17 @@
 
   map <Leader>t :call ToggleTabCompletion()<CR>
 	
+" dx deploy
+" -----------------------------------------------------------------------------
+	function! DxDeploy()
+		call inputsave()
+		let v = input('Enter DX version (<enter> to cancel):')
+		call inputrestore()
+		if empty(v)
+		else
+			:cd ~/dx-cloud
+			execute '!npm run deploy' v
+		endif
+	endfunction
+
+	map <leader>d :call DxDeploy()<CR>
