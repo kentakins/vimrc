@@ -204,7 +204,7 @@
 	let g:netrw_liststyle = 4         " full date
 	let g:netrw_banner = 0            " no banner
 	let g:netrw_dirhistmax = 0
-	let g:netrw_keepdir = 0
+	let g:netrw_keepdir = 1
 	let g:netrw_browse_split = 4
 	let g:netrw_winsize = 30
 
@@ -224,7 +224,7 @@
 					let g:NetrwIsOpen=0
 			else
 					let g:NetrwIsOpen=1
-					silent Lexplore
+					silent Vex
 			endif
 	endfunction
 
