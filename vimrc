@@ -205,12 +205,11 @@
 	let g:netrw_altv=1              " open files on right
 	let g:netrw_preview=1           " open previews vertically
 
-	fun! VexToggle(dir)
-		if exists("t:vex_buf_nr")
-			call VexClose()
-		else
-			call VexOpen(a:dir)
-		endif
+	fun! NormalizeWidths()
+		let eadir_pref = &eadirection
+		set eadirection=hor
+		set equalalways! equalalways!
+		let &eadirection = eadir_pref
 	endf
 
 	fun! VexOpen(dir)
@@ -242,11 +241,12 @@
 		call NormalizeWidths()
 	endf
 
-	fun! NormalizeWidths()
-		let eadir_pref = &eadirection
-		set eadirection=hor
-		set equalalways! equalalways!
-		let &eadirection = eadir_pref
+	fun! VexToggle(dir)
+		if exists("t:vex_buf_nr")
+			call VexClose()
+		else
+			call VexOpen(a:dir)
+		endif
 	endf
 
 	" Add your own mapping. For example:
