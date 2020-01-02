@@ -79,8 +79,8 @@
 	" 244 	#808080 // grey
 	" 009		#ff0000 // red
 	" 047		#00d75f // green
-	" 022		#87ffd7 // aquamarine1
-	" 045		#00d7ff // turquoise2
+	" 122		#87ffd7 // aquamarine
+	" 045		#00d7ff // turquoise
 
 	" set t_Co=256
 	" set term=xterm-256color
@@ -116,12 +116,12 @@
 	hi Conditional		ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
 	hi Constant				ctermfg=NONE 	ctermbg=NONE	cterm=NONE			guifg=NONE 			guibg=NONE			gui=NONE
 	hi Define					ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
-	hi DiffAdd				ctermfg=022		ctermbg=NONE	cterm=BOLD			guifg=#87ffd7		guibg=NONE			gui=BOLD
+	hi DiffAdd				ctermfg=122		ctermbg=NONE	cterm=BOLD			guifg=#87ffd7		guibg=NONE			gui=BOLD
 	hi DiffDelete			ctermfg=009 	ctermbg=NONE	cterm=NONE			guifg=#ff0000 	guibg=NONE			gui=NONE
 	hi DiffChange			ctermfg=NONE 	ctermbg=024 	cterm=NONE			guifg=NONE 			guibg=NONE			gui=NONE
 	hi DiffText				ctermfg=NONE	ctermbg=024		cterm=BOLD			guifg=NONE			guibg=#005f87		gui=BOLD
-	hi ErrorMsg				ctermfg=255		ctermbg=161		cterm=NONE			guifg=#ffffff		guibg=#d7005f		gui=NONE
-	hi WarningMsg			ctermfg=255		ctermbg=161		cterm=NONE			guifg=#ffffff		guibg=#d7005f		gui=NONE
+	hi ErrorMsg				ctermfg=NONE	ctermbg=NONE	cterm=UNDERLINE guifg=NONE			guibg=NONE			gui=UNDERLINE
+	hi WarningMsg			ctermfg=NONE	ctermbg=NONE	cterm=NONE			guifg=NONE			guibg=NONE			gui=NONE
 	hi Float					ctermfg=177		ctermbg=NONE	cterm=NONE			guifg=#af87ff		guibg=NONE			gui=NONE
 	hi Function				ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
 	hi Identifier			ctermfg=045 	ctermbg=NONE	cterm=NONE			guifg=#00d7ff 	guibg=NONE			gui=NONE
@@ -172,6 +172,10 @@
 	hi jsRegexpGroup 				ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
 	hi jsRegexpString 			ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
 	hi jsRegexpSpecial 			ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
+
+	" ALE highlighting
+	hi ALEErrorSign ctermfg=009 ctermbg=none cterm=none
+	hi ALEError ctermfg=009 ctermbg=none cterm=underline
 
 
 " file stuff
