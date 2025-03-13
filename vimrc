@@ -549,14 +549,14 @@ endif
 " -----------------------------------------------------------------------------
 
 	" theme reference
-	" cterm 	hex
-	" 255 	#ffffff // white
-	" 232 	#080808 // grey
-	" 233 	#121212 // grey
-	" 234 	#1c1c1c // grey
-	" 235 	#262626 // grey
-	" 237 	#3a3a3a // grey
-	" 244 	#808080 // grey
+	" cterm		hex
+	" 255		#ffffff // white
+	" 232		#080808 // grey
+	" 233		#121212 // grey
+	" 234		#1c1c1c // grey
+	" 235		#262626 // grey
+	" 237		#3a3a3a // grey
+	" 244		#808080 // grey
 	" 009		#ff0000 // red
 	" 047		#00d75f // green
 	" 122		#87ffd7 // aquamarine
@@ -573,54 +573,54 @@ endif
 	" hi Comment ctermfg=246 guifg=#949494
 
 	hi Cursor					ctermfg=235		ctermbg=255		cterm=NONE			guifg=#262626		guibg=#ffffff		gui=NONE
-	hi Visual					ctermfg=NONE 	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
+	hi Visual					ctermfg=NONE	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
 	hi CursorLine			ctermfg=NONE	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
-	hi CursorColumn		ctermfg=NONE 	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
-	hi ColorColumn		ctermfg=NONE 	ctermbg=NONE	cterm=NONE			guifg=NONE			guibg=NONE			gui=NONE
+	hi CursorColumn		ctermfg=NONE	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
+	hi ColorColumn		ctermfg=NONE	ctermbg=NONE	cterm=NONE			guifg=NONE			guibg=NONE			gui=NONE
 	hi LineNr					ctermfg=241		ctermbg=NONE	cterm=NONE			guifg=#606060		guibg=NONE			gui=NONE
 	hi VertSplit			ctermfg=241		ctermbg=NONE	cterm=NONE			guifg=#626262		guibg=NONE			gui=NONE
-	hi MatchParen			ctermfg=255		ctermbg=024 	cterm=NONE			guifg=#ffffff		guibg=#005f87 	gui=NONE
-	hi StatusLine			ctermfg=255		ctermbg=241 	cterm=BOLD			guifg=#ffffff		guibg=#626262 	gui=BOLD
-	hi StatusLineNC		ctermfg=255		ctermbg=241 	cterm=NONE			guifg=#ffffff		guibg=#626262 	gui=NONE
-	hi Pmenu					ctermfg=NONE	ctermbg=NONE 	cterm=NONE			guifg=NONE			guibg=NONE 			gui=NONE
-	hi PmenuSel				ctermfg=NONE	ctermbg=241 	cterm=NONE			guifg=NONE			guibg=#626262 	gui=NONE
-	hi IncSearch			ctermfg=NONE	ctermbg=024 	cterm=NONE			guifg=NONE			guibg=#005f87 	gui=NONE
-	hi Search					ctermfg=NONE	ctermbg=024 	cterm=NONE			guifg=NONE			guibg=#005f87 	gui=NONE
-	hi Directory			ctermfg=045		ctermbg=NONE 	cterm=NONE			guifg=#00d7ff		guibg=NONE 			gui=NONE
-	hi Folded					ctermfg=246		ctermbg=024 	cterm=NONE			guifg=#949494		guibg=#005f87 	gui=NONE
-	hi SignColumn			ctermfg=NONE 	ctermbg=024 	cterm=NONE			guifg=NONE 			guibg=#005f87 	gui=NONE
-	hi Normal					ctermfg=255		ctermbg=NONE 	cterm=NONE			guifg=#ffffff		guibg=#0b2632 	gui=NONE
+	hi MatchParen			ctermfg=255		ctermbg=024		cterm=NONE			guifg=#ffffff		guibg=#005f87		gui=NONE
+	hi StatusLine			ctermfg=255		ctermbg=241		cterm=BOLD			guifg=#ffffff		guibg=#626262		gui=BOLD
+	hi StatusLineNC		ctermfg=255		ctermbg=241		cterm=NONE			guifg=#ffffff		guibg=#626262		gui=NONE
+	hi Pmenu					ctermfg=NONE	ctermbg=NONE	cterm=NONE			guifg=NONE			guibg=NONE			gui=NONE
+	hi PmenuSel				ctermfg=NONE	ctermbg=241		cterm=NONE			guifg=NONE			guibg=#626262		gui=NONE
+	hi IncSearch			ctermfg=NONE	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
+	hi Search					ctermfg=NONE	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
+	hi Directory			ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
+	hi Folded					ctermfg=246		ctermbg=024		cterm=NONE			guifg=#949494		guibg=#005f87		gui=NONE
+	hi SignColumn			ctermfg=NONE	ctermbg=024		cterm=NONE			guifg=NONE			guibg=#005f87		gui=NONE
+	hi Normal					ctermfg=255		ctermbg=NONE	cterm=NONE			guifg=#ffffff		guibg=#0b2632		gui=NONE
 	hi Boolean				ctermfg=177		ctermbg=NONE	cterm=NONE			guifg=#af87ff		guibg=NONE			gui=NONE
 	hi Character			ctermfg=177		ctermbg=NONE	cterm=NONE			guifg=#af87ff		guibg=NONE			gui=NONE
 	hi Comment				ctermfg=244		ctermbg=NONE	cterm=NONE			guifg=#808080		guibg=NONE			gui=NONE
 	hi Conditional		ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
-	hi Constant				ctermfg=NONE 	ctermbg=NONE	cterm=NONE			guifg=NONE 			guibg=NONE			gui=NONE
+	hi Constant				ctermfg=NONE	ctermbg=NONE	cterm=NONE			guifg=NONE			guibg=NONE			gui=NONE
 	hi Define					ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
 	hi DiffAdd				ctermfg=122		ctermbg=NONE	cterm=BOLD			guifg=#87ffd7		guibg=NONE			gui=BOLD
-	hi DiffDelete			ctermfg=009 	ctermbg=NONE	cterm=NONE			guifg=#ff0000 	guibg=NONE			gui=NONE
-	hi DiffChange			ctermfg=NONE 	ctermbg=024 	cterm=NONE			guifg=NONE 			guibg=NONE			gui=NONE
+	hi DiffDelete			ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
+	hi DiffChange			ctermfg=NONE	ctermbg=024		cterm=NONE			guifg=NONE			guibg=NONE			gui=NONE
 	hi DiffText				ctermfg=NONE	ctermbg=024		cterm=BOLD			guifg=NONE			guibg=#005f87		gui=BOLD
 	hi ErrorMsg				ctermfg=NONE	ctermbg=NONE	cterm=UNDERLINE guifg=NONE			guibg=NONE			gui=UNDERLINE
 	hi WarningMsg			ctermfg=NONE	ctermbg=NONE	cterm=NONE			guifg=NONE			guibg=NONE			gui=NONE
 	hi Float					ctermfg=177		ctermbg=NONE	cterm=NONE			guifg=#af87ff		guibg=NONE			gui=NONE
 	hi Function				ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
-	hi Identifier			ctermfg=045 	ctermbg=NONE	cterm=NONE			guifg=#00d7ff 	guibg=NONE			gui=NONE
+	hi Identifier			ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
 	hi Keyword				ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
 	hi Label					ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
-	hi NonText				ctermfg=238		ctermbg=NONE 	cterm=NONE			guifg=#444444		guibg=NONE			gui=NONE
+	hi NonText				ctermfg=238		ctermbg=NONE	cterm=NONE			guifg=#444444		guibg=NONE			gui=NONE
 	hi Number					ctermfg=177		ctermbg=NONE	cterm=NONE			guifg=#af87ff		guibg=NONE			gui=NONE
 	hi Operator				ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
 	hi PreProc				ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
 	hi Special				ctermfg=255		ctermbg=NONE	cterm=NONE			guifg=#ffffff		guibg=NONE			gui=NONE
-	hi SpecialKey			ctermfg=238 	ctermbg=NONE  cterm=NONE			guifg=#444444 	guibg=NONE			gui=NONE
-	hi Statement			ctermfg=009 	ctermbg=NONE	cterm=NONE			guifg=#ff0000 	guibg=NONE			gui=NONE
-	hi StorageClass		ctermfg=045 	ctermbg=NONE	cterm=NONE			guifg=#00d7ff 	guibg=NONE			gui=NONE
+	hi SpecialKey			ctermfg=238		ctermbg=NONE	cterm=NONE			guifg=#444444		guibg=NONE			gui=NONE
+	hi Statement			ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
+	hi StorageClass		ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
 	hi String					ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
 	hi Tag						ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
 	hi Title					ctermfg=255		ctermbg=NONE	cterm=BOLD			guifg=#ffffff		guibg=NONE			gui=BOLD
 	hi Todo						ctermfg=246		ctermbg=NONE	cterm=INVERSE		guifg=#949494		guibg=NONE			gui=INVERSE
 	hi Type						ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
-	hi underlined			ctermfg=NONE 	ctermbg=NONE	cterm=UNDERLINE guifg=NONE 			guibg=NONE			gui=UNDERLINE
+	hi underlined			ctermfg=NONE	ctermbg=NONE	cterm=UNDERLINE guifg=NONE			guibg=NONE			gui=UNDERLINE
 
 	" whitespace
 	hi NonText ctermfg=238 guifg=#444444
@@ -630,28 +630,29 @@ endif
 	set fillchars-=vert:\|
 
 	" custom javastript highlighting
-	hi jsFuncArgs 					ctermfg=011 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
-	hi jsFuncCall 					ctermfg=045 	ctermbg=NONE	cterm=NONE			guifg=#00d7ff 	guibg=NONE			gui=NONE
-	hi jsFuncArgExpression 	ctermfg=045 	ctermbg=NONE	cterm=NONE			guifg=#00d7ff 	guibg=NONE			gui=NONE
-	hi jsVariableDef				ctermfg=011 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
-	hi jsStorageClass				ctermfg=045 	ctermbg=NONE	cterm=NONE			guifg=#00d7ff 	guibg=NONE			gui=NONE
-	hi jsRepeat							ctermfg=011 	ctermbg=NONE	cterm=NONE			guifg=#ffdf00 	guibg=NONE			gui=NONE
-	hi jsArrowFunction 			ctermfg=045 	ctermbg=NONE	cterm=NONE			guifg=#00d7ff 	guibg=NONE			gui=NONE
+	hi jsFunction						ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
+	hi jsFuncArgs						ctermfg=011		ctermbg=NONE	cterm=NONE			guifg=#ffdf00		guibg=NONE			gui=NONE
+	hi jsFuncCall						ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
+	hi jsFuncArgExpression	ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
+	hi jsVariableDef				ctermfg=011		ctermbg=NONE	cterm=NONE			guifg=#ffdf00		guibg=NONE			gui=NONE
+	hi jsStorageClass				ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
+	hi jsRepeat							ctermfg=011		ctermbg=NONE	cterm=NONE			guifg=#ffdf00		guibg=NONE			gui=NONE
+	hi jsArrowFunction			ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
 
-	hi jsObjectKey					ctermfg=250 	ctermbg=NONE	cterm=NONE			guifg=#bcbcbc 	guibg=NONE			gui=NONE
-	hi jsObjectProp 				ctermfg=250 	ctermbg=NONE	cterm=NONE			guifg=#bcbcbc 	guibg=NONE			gui=NONE
-	hi jsObjectBraces 			ctermfg=246 	ctermbg=NONE	cterm=NONE			guifg=#949494 	guibg=NONE			gui=NONE
+	hi jsObjectKey					ctermfg=250		ctermbg=NONE	cterm=NONE			guifg=#bcbcbc		guibg=NONE			gui=NONE
+	hi jsObjectProp					ctermfg=250		ctermbg=NONE	cterm=NONE			guifg=#bcbcbc		guibg=NONE			gui=NONE
+	hi jsObjectBraces				ctermfg=246		ctermbg=NONE	cterm=NONE			guifg=#949494		guibg=NONE			gui=NONE
 
-	hi jsTemplateExpression ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpCharClass 		ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpBoundary 		ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpBackRef 			ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpQuantifier 	ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpOr 					ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpMod 					ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpGroup 				ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpString 			ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
-	hi jsRegexpSpecial 			ctermfg=047 	ctermbg=NONE	cterm=NONE			guifg=#00d75f 	guibg=NONE			gui=NONE
+	hi jsTemplateExpression ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpCharClass		ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpBoundary			ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpBackRef			ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpQuantifier		ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpOr						ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpMod					ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpGroup				ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpString				ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
+	hi jsRegexpSpecial			ctermfg=047		ctermbg=NONE	cterm=NONE			guifg=#00d75f		guibg=NONE			gui=NONE
 
 	" ALE highlighting
 	hi ALEErrorSign ctermfg=009 ctermbg=none cterm=none
