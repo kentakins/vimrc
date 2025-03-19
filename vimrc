@@ -44,11 +44,9 @@ Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
-Plug 'sheerun/vim-polyglot'
-Plug 'HerringtonDarkholme/yats.vim'
-
+" Plug 'sheerun/vim-polyglot'
 if isdirectory('/usr/local/opt/fzf')
 	Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -83,9 +81,13 @@ Plug 'mattn/emmet-vim'
 
 " javascript
 "" Javascript Bundle
-Plug 'jelera/vim-javascript-syntax'
+" Plug 'jelera/vim-javascript-syntax'
+Plug 'maxmellon/vim-jsx-pretty'
 
 
+
+"" Set relative number line
+set rnu
 "*****************************************************************************
 "*****************************************************************************
 
@@ -127,9 +129,9 @@ set noexpandtab
 set tabstop=2
 set shiftwidth=2
 
+
 "" Set relative number line
 set rnu
-
 
 "" Map leader to ,
 let mapleader=','
@@ -235,7 +237,7 @@ else
 	let g:CSApprox_loaded = 1
 
 	" IndentLine
-	let g:indentLine_enabled = 0
+	let g:indentLine_enabled = 1
 	let g:indentLine_concealcursor = 0
 	let g:indentLine_char = '┆'
 	let g:indentLine_faster = 1
@@ -249,11 +251,12 @@ else
 	endif
 endif
 
+set conceallevel=0
+set concealcursor=nc
 
 if &term =~ '256color'
 	set t_ut=
 endif
-
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
@@ -336,6 +339,9 @@ if g:vim_bootstrap_editor == 'nvim'
 else
 	nnoremap <silent> <leader>sh :VimShellCreate<CR>
 endif
+
+" Associate various JS extensions with JavaScript syntax
+autocmd BufNewFile,BufRead *.js,*.jsx,*.mjs,*.ts,*.tsx set filetype=javascript
 
 "*****************************************************************************
 "" Autocmd Rules
@@ -479,8 +485,7 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" Custom configs
 "*****************************************************************************
 
-autocmd Filetype *.* %retab!
-autocmd BufNewFile,BufRead *.mjs set filetype=javascript
+autocmd Filetype * %retab!
 
 " html
 " for html files, 2 spaces
@@ -564,7 +569,7 @@ endif
 
 	" set t_Co=256
 	" set term=xterm-256color
-	syntax on
+	" syntax on
 	autocmd BufEnter * :syntax sync fromstart
 
 	" tweak delek theme into hula-blue
@@ -630,6 +635,10 @@ endif
 	set fillchars-=vert:\|
 
 	" custom javastript highlighting
+	hi jsComment						ctermfg=244		ctermbg=NONE	cterm=NONE			guifg=#808080		guibg=NONE			gui=NONE
+	hi jsGlobalNodeObjects	ctermfg=251		ctermbg=NONE	cterm=NONE			guifg=#c6c6c6		guibg=NONE			gui=NONE
+	hi jsGlobalObjects			ctermfg=251		ctermbg=NONE	cterm=NONE			guifg=#c6c6c6		guibg=NONE			gui=NONE
+	hi jsReturn							ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
 	hi jsFunction						ctermfg=009		ctermbg=NONE	cterm=NONE			guifg=#ff0000		guibg=NONE			gui=NONE
 	hi jsFuncArgs						ctermfg=011		ctermbg=NONE	cterm=NONE			guifg=#ffdf00		guibg=NONE			gui=NONE
 	hi jsFuncCall						ctermfg=045		ctermbg=NONE	cterm=NONE			guifg=#00d7ff		guibg=NONE			gui=NONE
@@ -773,14 +782,14 @@ endif
 " dx deploy
 " -----------------------------------------------------------------------------
 	function! DxDeploy()
-		" call inputsave()
-		" let v = input('Enter DX version (<enter> to cancel):')
-		" call inputrestore()
-		" if empty(v)
-		" else
-			:cd ~/dx-aws
-			execute '!npm run deploy:dx'
-		" endif
+		call inputsave()
+		let v = input('Enter DX version (<enter> to cancel):')
+		call inputrestore()
+		if empty(v)
+		else
+			:cd ~/dx-cloud
+			execute '!npm run deploy' v
+		endif
 	endfunction
 
 	map <leader>d :call DxDeploy()<CR>
