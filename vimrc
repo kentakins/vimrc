@@ -485,7 +485,8 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" Custom configs
 "*****************************************************************************
 
-autocmd Filetype * %retab!
+" autocmd Filetype * %retab!
+autocmd BufWritePre * if &modifiable | retab! | endif
 
 " html
 " for html files, 2 spaces
